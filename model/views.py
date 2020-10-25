@@ -13,4 +13,5 @@ def predict(request):
     l = np.array(l)
     l = np.reshape(l,(1,l.shape[0]))
     print("result:    " ,regressor.predict(l))
-    return HttpResponse('<h1> Result </h1>')
+    res = regressor.predict(l)
+    return HttpResponse(str(res))
