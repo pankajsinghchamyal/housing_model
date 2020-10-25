@@ -1,0 +1,6 @@
+env/
+deploy/__pycache__/
+deploy/migrations/__pycache__/
+model/__pycache__/
+model/migrations/__pycache__/
+db.sqlite3
