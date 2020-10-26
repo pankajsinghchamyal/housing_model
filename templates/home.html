@@ -1,32 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: violet;
+        }
+
+        .title {
+            background-color: purple;
+            padding-top: 7px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .data {
+            width: 98vw;
+            height: fit-content;
+        }
+
+        .col {
+            /* border: 1px solid black; */
+            width: auto;
+            height: fit-content;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .sub-btn {
+            width: 100vw;
+            display:flex;
+            justify-content: center;
+            height: 30px;
+        }
+
+        .inputs{
+            width: 250px;
+            height: 30px;
+            outline: none;
+            font-size: 18px;
+            padding-left: 10px;
+            border: none;
+            border-bottom: 1px solid black;
+            background-color: aqua;
+            border-top-left-radius:10px;
+            border-top-right-radius:10px;
+        }
+
+        label{
+            padding-left: 5px;
+        }
+        #submit{
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+            border: 1px solid purple;
+        }
+        #submit:hover{
+            background-color: purple;
+            color: white;
+            border: 1px solid white;
+
+        }
+    </style>
 </head>
+
 <body>
+    <div class="title">
+        <h1 style="color: white;"> House Price Pridiction</h1>
+    </div>
     <form action="predict" method="POST">
-    {% csrf_token %}
-        <input type="text" name="bedrooms"><br> <br>
-        <input type="text" name="bathrooms"><br> <br>
-        <input type="text" name="sqft_living"><br> <br>
-        <input type="text" name="sqft_lot"><br> <br>
-        <input type="text" name="floors"><br> <br>
-        <input type="text" name="waterfront"><br> <br>
-        <input type="text" name="view"><br> <br>
-        <input type="text" name="condition"><br> <br>
-        <input type="text" name="grade"><br> <br>
-        <input type="text" name="sqft_above"><br> <br>
-        <input type="text" name="sqft_basement"><br> <br>
-        <input type="text" name="yr_built"><br> <br>
-        <input type="text" name="yr_renovated"><br> <br>
-        <input type="text" name="zipcode"><br> <br>
-        <input type="text" name="lat"><br> <br>
-        <input type="text" name="long"><br> <br>
-        <input type="text" name="sqft_living15"><br> <br>
-        <input type="text" name="sqft_lot15"><br> <br>
-        <input type="submit">
+        <div class="data">
+
+            <!-- {% csrf_token %} -->
+            <div style="display: flex;justify-content: center; height: 80%;">
+                <div class="col">
+                    <label for="bedrooms"> Bedrooms</label> <br>
+                    <input class="inputs" type="text" id="bedrooms" name=""><br> <br>
+                    <label for="bathrooms">bathrooms</label> <br>
+                    <input class="inputs" type="text" id="bathrooms" name="bathrooms"><br> <br>
+                    <label for="sqft_living">sqft_living</label> <br>
+                    <input class="inputs" type="text" id="sqft_living" name="sqft_living"><br> <br>
+                    <label for="sqft_lot">sqft_lot</label> <br>
+                    <input class="inputs" type="text" id="sqft_lot" name="sqft_lot"><br> <br>
+                    <label for="floors">floors</label> <br>
+                    <input class="inputs" type="text" id="floors" name="floors"><br> <br>
+                    <label for="waterfront">waterfront</label> <br>
+                    <input class="inputs" type="text" id="waterfront" name="waterfront"><br> <br>
+
+                </div>
+                <div class="col">
+                    <label for="sqft_above">sqft_above</label> <br>
+                    <input class="inputs" type="text" id="sqft_above" name="sqft_above"><br> <br>
+                    <label for="sqft_basement">sqft_basement</label> <br>
+                    <input class="inputs" type="text" id="sqft_basement" name="sqft_basement"><br> <br>
+                    <label for="yr_built">yr_built</label> <br>
+                    <input class="inputs" type="text" id="yr_built" name="yr_built"><br> <br>
+                    <label for="yr_renovated">yr_renovated</label> <br>
+                    <input class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
+                    <label for="zipcode">zipcode</label> <br>
+                    <input class="inputs" type="text" id="zipcode" name="zipcode"><br> <br>
+                    <label for="lat">lat</label> <br>
+                    <input class="inputs" type="text" id="lat" name="lat"><br> <br>
+
+                </div>
+                <div class="col">
+                    <label for="long">long</label> <br>
+                    <input class="inputs" type="text" id="long" name="long"><br> <br>
+                    <label for="sqft_living15">sqft_living15</label> <br>
+                    <input class="inputs" type="text" id="sqft_living15" name="sqft_living15"><br> <br>
+                    <label for="sqft_lot15">qft_lot15</label> <br>
+                    <input class="inputs" type="text" id="sqft_lot15" name="sqft_lot15"><br> <br>
+                    <label for="view">view</label> <br>
+                    <input class="inputs" type="text" id="view" name="view"><br> <br>
+                    <label for="condition">condition</label> <br>
+                    <input class="inputs" type="text" id="condition" name="condition"><br> <br>
+                    <label for="grade">grade</label> <br>
+                    <input class="inputs" type="text" id="grade" name="grade"><br> <br>
+                </div>
+            </div>
+        </div>
+        <div class="sub-btn" style="">
+        <input id="submit" type="submit">
+    </div>
     </form>
 </body>
+
 </html>
