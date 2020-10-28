@@ -1,87 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            background-color: violet;
-        }
-        
-        .title {
-            background-color: purple;
-            padding-top: 7px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .data {
-            width: 98vw;
-            height: fit-content;
-        }
-        
-        .col {
-            /* border: 1px solid black; */
-            width: auto;
-            height: fit-content;
-            padding: 20px;
-            margin: 20px;
-        }
-        
-        .sub-btn {
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            height: 30px;
-        }
-        
-        .inputs {
-            width: 250px;
-            height: 30px;
-            outline: none;
-            font-size: 18px;
-            padding-left: 10px;
-            border: none;
-            border-bottom: 1px solid black;
-            background-color: aqua;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        
-        label {
-            padding-left: 5px;
-        }
-        
-        #submit {
-            width: 100px;
-            height: 40px;
-            border-radius: 20px;
-            cursor: pointer;
-            outline: none;
-            border: 1px solid purple;
-        }
-        
-        #submit:hover {
-            background-color: purple;
-            color: white;
-            border: 1px solid white;
-        }
-    </style>
+    <title>housing</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
 </head>
 
 <body>
-    <div class="title">
-        <h1 style="color: white;"> House Price Pridiction</h1>
-    </div>
+    <!--<div class="title">
+        <h1 style="color: white;"> King Country US House Price Pridiction</h1>
+    </div>-->
     <form action="predict" method="POST">
         <div class="data">
 
@@ -90,45 +21,45 @@
                 <div class="col">
                     <label for="bedrooms"> Bedrooms</label> <br>
                     <input class="inputs" type="text" id="bedrooms" name="bedrooms"><br> <br>
-                    <label for="bathrooms">bathrooms</label> <br>
+                    <label for="bathrooms">Bathrooms</label> <br>
                     <input class="inputs" type="text" id="bathrooms" name="bathrooms"><br> <br>
-                    <label for="sqft_living">sqft_living</label> <br>
+                    <label for="sqft_living">Living Area</label> <br>
                     <input class="inputs" type="text" id="sqft_living" name="sqft_living"><br> <br>
-                    <label for="sqft_lot">sqft_lot</label> <br>
+                    <label for="sqft_lot">Lot Area</label> <br>
                     <input class="inputs" type="text" id="sqft_lot" name="sqft_lot"><br> <br>
-                    <label for="floors">floors</label> <br>
+                    <label for="floors">Floors</label> <br>
                     <input class="inputs" type="text" id="floors" name="floors"><br> <br>
-                    <label for="waterfront">waterfront</label> <br>
+                    <label for="waterfront">Waterfront</label> <br>
                     <input class="inputs" type="text" id="waterfront" name="waterfront"><br> <br>
 
                 </div>
                 <div class="col">
-                    <label for="sqft_above">sqft_above</label> <br>
+                    <label for="sqft_above">Above Area</label> <br>
                     <input class="inputs" type="text" id="sqft_above" name="sqft_above"><br> <br>
-                    <label for="sqft_basement">sqft_basement</label> <br>
+                    <label for="sqft_basement">Basement</label> <br>
                     <input class="inputs" type="text" id="sqft_basement" name="sqft_basement"><br> <br>
-                    <label for="yr_built">yr_built</label> <br>
+                    <label for="yr_built">Year of Built</label> <br>
                     <input class="inputs" type="text" id="yr_built" name="yr_built"><br> <br>
-                    <label for="yr_renovated">yr_renovated</label> <br>
+                    <label for="yr_renovated">Year of Renovated</label> <br>
                     <input class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
-                    <label for="zipcode">zipcode</label> <br>
+                    <label for="zipcode">Zipcode</label> <br>
                     <input class="inputs" type="text" id="zipcode" name="zipcode"><br> <br>
-                    <label for="lat">lat</label> <br>
+                    <label for="lat">Latitude</label> <br>
                     <input class="inputs" type="text" id="lat" name="lat"><br> <br>
 
                 </div>
                 <div class="col">
-                    <label for="long">long</label> <br>
+                    <label for="long">Longitude</label> <br>
                     <input class="inputs" type="text" id="long" name="long"><br> <br>
-                    <label for="sqft_living15">sqft_living15</label> <br>
+                    <label for="sqft_living15">Living15 Area</label> <br>
                     <input class="inputs" type="text" id="sqft_living15" name="sqft_living15"><br> <br>
-                    <label for="sqft_lot15">qft_lot15</label> <br>
+                    <label for="sqft_lot15">Lot15 Area</label> <br>
                     <input class="inputs" type="text" id="sqft_lot15" name="sqft_lot15"><br> <br>
-                    <label for="view">view</label> <br>
+                    <label for="view">View</label> <br>
                     <input class="inputs" type="text" id="view" name="view"><br> <br>
-                    <label for="condition">condition</label> <br>
+                    <label for="condition">Condition</label> <br>
                     <input class="inputs" type="text" id="condition" name="condition"><br> <br>
-                    <label for="grade">grade</label> <br>
+                    <label for="grade">Grade</label> <br>
                     <input class="inputs" type="text" id="grade" name="grade"><br> <br>
                 </div>
             </div>
