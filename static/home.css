@@ -46,6 +46,7 @@ body {
     background: transparent;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    color: white;
 }
 
 label {
@@ -54,7 +55,7 @@ label {
     color: white;
 }
 
-#submit {
+#s {
     width: 100px;
     height: 40px;
     border-radius: 20px;
@@ -67,7 +68,7 @@ label {
     font-size: 20px;
 }
 
-#submit:hover {
+#s:hover {
     background-color: black;
     color: white;
     border: 1px solid white;

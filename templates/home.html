@@ -13,7 +13,7 @@
     <!--<div class="title">
         <h1 style="color: white;"> King Country US House Price Pridiction</h1>
     </div>-->
-    <form action="predict" method="POST">
+    <form action="predict" method="POST" id="myform">
         <div class="data">
 
             {% csrf_token %}
@@ -65,9 +65,18 @@
             </div>
         </div>
         <div class="sub-btn" style="">
-            <input id="submit" type="submit">
+            <input id="s" type="button" value="submit" onclick="f()">
         </div>
     </form>
+
+    <script>
+        function f() {
+            if (int(document.getElementById('grade').value) > 1) {
+                console.log('wrong');
+            }
+            document.getElementById("myform").submit();
+        }
+    </script>
 </body>
 
 </html>
