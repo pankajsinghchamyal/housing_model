@@ -1,145 +1,114 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>result</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            background-color: violet;
-        }
-        
-        .title {
-            background-color: purple;
-            padding-top: 7px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .data {
-            width: 98vw;
-            height: fit-content;
-        }
-        
-        .col {
-            /* border: 1px solid black; */
-            width: auto;
-            height: fit-content;
-            padding: 20px;
-            margin: 20px;
-        }
-        
-        .sub-btn {
-            width: 100vw;
-            display: flex;
-            justify-content: center;
-            height: 30px;
-        }
-        
-        .inputs {
-            width: 250px;
-            height: 30px;
-            outline: none;
-            font-size: 18px;
-            padding-left: 10px;
-            border: none;
-            border-bottom: 1px solid black;
-            background-color: aqua;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        
-        label {
-            padding-left: 5px;
-        }
-        
-        #submit {
-            width: 100px;
-            height: 40px;
-            border-radius: 20px;
-            cursor: pointer;
-            outline: none;
-            border: 1px solid purple;
-        }
-        
-        #submit:hover {
-            background-color: purple;
-            color: white;
-            border: 1px solid white;
-        }
-    </style>
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <script src="https://kit.fontawesome.com/e8f58f23ba.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="title">
-        <h1 style="color: white;"> House Price Pridiction</h1>
-    </div>
-    <form action="predict" method="POST">
+    <!--<div class="title">
+        <h1 style="color: white;"> King Country US House Price Pridiction</h1>
+    </div>-->
+    <form action="predict" method="POST" id="myform">
         <div class="data">
 
             {% csrf_token %}
             <div style="display: flex;justify-content: center; height: 80%;">
                 <div class="col">
-                    <label for="bedrooms"> Bedrooms</label> <br>
-                    <input class="inputs" type="text" id="bedrooms" name="bedrooms"><br> <br>
-                    <label for="bathrooms">bathrooms</label> <br>
-                    <input class="inputs" type="text" id="bathrooms" name="bathrooms"><br> <br>
-                    <label for="sqft_living">sqft_living</label> <br>
-                    <input class="inputs" type="text" id="sqft_living" name="sqft_living"><br> <br>
-                    <label for="sqft_lot">sqft_lot</label> <br>
-                    <input class="inputs" type="text" id="sqft_lot" name="sqft_lot"><br> <br>
-                    <label for="floors">floors</label> <br>
-                    <input class="inputs" type="text" id="floors" name="floors"><br> <br>
-                    <label for="waterfront">waterfront</label> <br>
-                    <input class="inputs" type="text" id="waterfront" name="waterfront"><br> <br>
+                    <label for="bedrooms"> Bedrooms <i class="fas fa-info-circle">
+                            <span class="info">this is bedroom</span>
+                        </i>
+                    </label> <br>
+                    <input value="{{bedrooms}}" class="inputs" type="text" id="bedrooms" name="bedrooms"><br> <br>
+                    <label for="bathrooms">Bathrooms <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{bathrooms}}" class="inputs" type="text" id="bathrooms" name="bathrooms"><br> <br>
+                    <label for="sqft_living">Living Area <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{sqft_living}}" class="inputs" type="text" id="sqft_living" name="sqft_living"><br> <br>
+                    <label for="sqft_lot">Lot Area <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{sqft_lot}}" class="inputs" type="text" id="sqft_lot" name="sqft_lot"><br> <br>
+                    <label for="floors">Floors <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{floors}}" class="inputs" type="text" id="floors" name="floors"><br> <br>
+                    <label for="waterfront">Waterfront <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{waterfront}}" class="inputs" type="text" id="waterfront" name="waterfront"><br> <br>
 
                 </div>
                 <div class="col">
-                    <label for="sqft_above">sqft_above</label> <br>
-                    <input class="inputs" type="text" id="sqft_above" name="sqft_above"><br> <br>
-                    <label for="sqft_basement">sqft_basement</label> <br>
-                    <input class="inputs" type="text" id="sqft_basement" name="sqft_basement"><br> <br>
-                    <label for="yr_built">yr_built</label> <br>
-                    <input class="inputs" type="text" id="yr_built" name="yr_built"><br> <br>
-                    <label for="yr_renovated">yr_renovated</label> <br>
-                    <input class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
-                    <label for="zipcode">zipcode</label> <br>
-                    <input class="inputs" type="text" id="zipcode" name="zipcode"><br> <br>
-                    <label for="lat">lat</label> <br>
-                    <input class="inputs" type="text" id="lat" name="lat"><br> <br>
+                    <label for="view">View <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{view}}" class="inputs" type="text" id="view" name="view"><br> <br>
+                    <label for="condition">Condition <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{condition}}" class="inputs" type="text" id="condition" name="condition"><br> <br>
+                    <label for="grade">Grade <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{grade}}" class="inputs" type="text" id="grade" name="grade"><br> <br>
+                    <label for="sqft_above">Above Area <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{sqft_above}}" class="inputs" type="text" id="sqft_above" name="sqft_above"><br> <br>
+                    <label for="sqft_basement">Basement <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{sqft_basement}}" class="inputs" type="text" id="sqft_basement" name="sqft_basement"><br> <br>
+                    <label for="yr_built">Year of Built <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{yr_built}}" class="inputs" type="text" id="yr_built" name="yr_built"><br> <br>
+
 
                 </div>
                 <div class="col">
-                    <label for="long">long</label> <br>
-                    <input class="inputs" type="text" id="long" name="long"><br> <br>
-                    <label for="sqft_living15">sqft_living15</label> <br>
-                    <input class="inputs" type="text" id="sqft_living15" name="sqft_living15"><br> <br>
-                    <label for="sqft_lot15">qft_lot15</label> <br>
-                    <input class="inputs" type="text" id="sqft_lot15" name="sqft_lot15"><br> <br>
-                    <label for="view">view</label> <br>
-                    <input class="inputs" type="text" id="view" name="view"><br> <br>
-                    <label for="condition">condition</label> <br>
-                    <input class="inputs" type="text" id="condition" name="condition"><br> <br>
-                    <label for="grade">grade</label> <br>
-                    <input class="inputs" type="text" id="grade" name="grade"><br> <br>
+                    <label for="yr_renovated">Year of Renovated <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{yr_renovated}}" class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
+                    <label for="zipcode">Zipcode <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{zipcode}}" class="inputs" type="text" id="zipcode" name="zipcode"><br> <br>
+                    <label for="lat">Latitude <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{lat}}" class="inputs" type="text" id="lat" name="lat"><br> <br>
+                    <label for="long">Longitude <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{long}}" class="inputs" type="text" id="long" name="long"><br> <br>
+                    <label for="sqft_living15">Living15 Area <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{sqft_living15}}" class="inputs" type="text" id="sqft_living15" name="sqft_living15"><br> <br>
+                    <label for="sqft_lot15">Lot15 Area <i class="fas fa-info-circle"><span class="info">this is
+                                bedroom</span></i></label> <br>
+                    <input value="{{sqft_lot15}}" class="inputs" type="text" id="sqft_lot15" name="sqft_lot15"><br> <br>
+
+
+
                 </div>
             </div>
         </div>
         <div class="sub-btn" style="">
-            <h3>result : {{res}}</h3>
+            <h2 id="s">{{res}}</h2>
         </div>
-
-        {{feature}}
     </form>
-        
+
+    <script>
+        function f() {
+            // if (parseFloat(document.getElementById("bedrooms").value) < 4) {
+            //     console.log("bedroom not negative");
+            //     return;
+            // }
+            // if (parseFloat(document.getElementById("bathrooms").value) < 4) {
+            //     console.log("bedroom not negative");
+            //     return;
+            // }
+            // bhai ese hi range statement laga le
+
+            document.getElementById("myform").submit();
+        }
+    </script>
 </body>
 
 </html>
