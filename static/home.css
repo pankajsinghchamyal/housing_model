@@ -73,7 +73,7 @@ label {
     border: 1px solid white;
 }
 
-i .info{
+i .info {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -85,6 +85,17 @@ i .info{
     z-index: 1;
 }
 
-i:hover .info{
+i:hover .info {
     visibility: visible;
+}
+
+.res {
+    /* background-color: red; */
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.res h2 {
+    font-size: 36px;
 }
