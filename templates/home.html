@@ -1,32 +1,111 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>housing</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <script src="https://kit.fontawesome.com/e8f58f23ba.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <form action="predict" method="POST">
-    {% csrf_token %}
-        <input type="text" name="bedrooms"><br> <br>
-        <input type="text" name="bathrooms"><br> <br>
-        <input type="text" name="sqft_living"><br> <br>
-        <input type="text" name="sqft_lot"><br> <br>
-        <input type="text" name="floors"><br> <br>
-        <input type="text" name="waterfront"><br> <br>
-        <input type="text" name="view"><br> <br>
-        <input type="text" name="condition"><br> <br>
-        <input type="text" name="grade"><br> <br>
-        <input type="text" name="sqft_above"><br> <br>
-        <input type="text" name="sqft_basement"><br> <br>
-        <input type="text" name="yr_built"><br> <br>
-        <input type="text" name="yr_renovated"><br> <br>
-        <input type="text" name="zipcode"><br> <br>
-        <input type="text" name="lat"><br> <br>
-        <input type="text" name="long"><br> <br>
-        <input type="text" name="sqft_living15"><br> <br>
-        <input type="text" name="sqft_lot15"><br> <br>
-        <input type="submit">
+    <!--<div class="title">
+        <h1 style="color: white;"> King Country US House Price Pridiction</h1>
+    </div>-->
+    <form action="predict" method="POST" id="myform">
+        <div class="data">
+
+            {% csrf_token %}
+            <div style="display: flex;justify-content: center; height: 80%;">
+                <div class="col">
+
+                    <label for="bedrooms"> Bedrooms <i class="fas fa-info-circle">
+                        <span class="info">Min 1 and Max 8</span></i></label> <br>
+                    <input class="inputs" type="text" id="bedrooms" name="bedrooms"><br> <br>
+
+                    <label for="bathrooms">Bathrooms <i class="fas fa-info-circle"><span class="info">Min 1 and Max 30
+                                </span></i></label> <br>
+                    <input class="inputs" type="text" id="bathrooms" name="bathrooms"><br> <br>
+
+
+                    <label for="sqft_living">Living Area <i class="fas fa-info-circle"><span class="info">Min 300 Max 13000</span> </i></label> <br>
+                    <input class="inputs" type="text" id="sqft_living" name="sqft_living"><br> <br>
+
+                    <label for="sqft_lot">Lot Area <i class="fas fa-info-circle"><span class="info">Min 500 Max 150000</span></i></label> <br>
+                    <input class="inputs" type="text" id="sqft_lot" name="sqft_lot"><br> <br>
+
+                    <label for="floors">Floors <i class="fas fa-info-circle"><span class="info">Min 1 and Max 3</span></i></label> <br>
+                    <input class="inputs" type="text" id="floors" name="floors"><br> <br>
+
+                    <label for="waterfront">Waterfront <i class="fas fa-info-circle"><span class="info"> Min 0 Max 1</span></i></label> <br>
+                    <input class="inputs" type="text" id="waterfront" name="waterfront"><br> <br>
+
+                </div>
+                <div class="col">
+                    <label for="sqft_above">Above Area <i class="fas fa-info-circle"><span class="info">Min 300 Max 9000</span></i></label> <br>
+                    <input class="inputs" type="text" id="sqft_above" name="sqft_above"><br> <br>
+
+                    <label for="sqft_basement">Basement <i class="fas fa-info-circle"><span class="info">Min 0 and Max 5000</span></i></label> <br>
+                    <input class="inputs" type="text" id="sqft_basement" name="sqft_basement"><br> <br>
+
+                    <label for="yr_built">Year of Built <i class="fas fa-info-circle"><span class="info">Min 1900 and Max 2020</span></i></label> <br>
+                    <input class="inputs" type="text" id="yr_built" name="yr_built"><br> <br>
+
+                    <label for="yr_renovated">Year of Renovated <i class="fas fa-info-circle"><span class="info">Min 0 and Max 2020</span></i></label> <br>
+                    <input class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
+
+
+                    <label for="lat">Latitude <i class="fas fa-info-circle"><span class="info">Around 47 and 48</span></i></label> <br>
+                    <input class="inputs" type="text" id="lat" name="lat"><br> <br>
+
+                    <label for="long">Longitude <i class="fas fa-info-circle"><span class="info">Around -122 and -121</span></i></label> <br>
+                    <input class="inputs" type="text" id="long" name="long"><br> <br>
+
+                </div>
+                <div class="col">
+
+                    <label for="zipcode">Zipcode <i class="fas fa-info-circle"><span class="info">Zipcode of Location</span></i></label> <br>
+                    <input class="inputs" type="text" id="zipcode" name="zipcode"><br> <br>
+
+                    <label for="sqft_living15">Living15 Area <i class="fas fa-info-circle"><span class="info">Min 300 Max 13000</span></i></label> <br>
+                    <input class="inputs" type="text" id="sqft_living15" name="sqft_living15"><br> <br>
+
+                    <label for="sqft_lot15">Lot15 Area <i class="fas fa-info-circle"><span class="info">Min 500 Max 150000</span></i></label> <br>
+                    <input class="inputs" type="text" id="sqft_lot15" name="sqft_lot15"><br> <br>
+
+                    <label for="view">View <i class="fas fa-info-circle"><span class="info">Min 0 Max 10</span></i></label> <br>
+                    <input class="inputs" type="text" id="view" name="view"><br> <br>
+
+                    <label for="condition">Condition <i class="fas fa-info-circle"><span class="info">Min 3 Max 5</span></i></label> <br>
+                    <input class="inputs" type="text" id="condition" name="condition"><br> <br>
+
+                    <label for="grade">Grade <i class="fas fa-info-circle"><span class="info">Min 1 Max 13</span></i></label> <br>
+                    <input class="inputs" type="text" id="grade" name="grade"><br> <br>
+                </div>
+            </div>
+        </div>
+        <div class="sub-btn" style="">
+            <input id="s" type="button" value="submit" onclick="f()">
+        </div>
     </form>
+
+    <script>
+        function f() {
+            if (parseFloat(document.getElementById("bedrooms").value) < 0) {
+                console.log("bedroom not negative");
+                return;
+            }
+            if (parseFloat(document.getElementById("bathrooms").value) < 0) {
+                console.log("bedroom not negative");
+                return;
+            }
+            // bhai ese hi range statement laga le
+
+            document.getElementById("myform").submit();
+        }
+    </script>
 </body>
+
 </html>
