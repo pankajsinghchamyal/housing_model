@@ -20,77 +20,74 @@
             {% csrf_token %}
             <div style="display: flex;justify-content: center; height: 80%;">
                 <div class="col">
+
                     <label for="bedrooms"> Bedrooms <i class="fas fa-info-circle">
-                            <span class="info">this is bedroom</span>
-                        </i>
-                    </label> <br>
+                        <span class="info">Min 1 and Max 8</span></i></label> <br>
                     <input value="{{bedrooms}}" class="inputs" type="text" id="bedrooms" name="bedrooms"><br> <br>
-                    <label for="bathrooms">Bathrooms <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="bathrooms">Bathrooms <i class="fas fa-info-circle"><span class="info">Min 1 and Max 30
+                                </span></i></label> <br>
                     <input value="{{bathrooms}}" class="inputs" type="text" id="bathrooms" name="bathrooms"><br> <br>
-                    <label for="sqft_living">Living Area <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+
+                    <label for="sqft_living">Living Area <i class="fas fa-info-circle"><span class="info">Min 300 Max 13000 sqft</span> </i></label> <br>
                     <input value="{{sqft_living}}" class="inputs" type="text" id="sqft_living" name="sqft_living"><br> <br>
-                    <label for="sqft_lot">Lot Area <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="sqft_lot">Lot Area <i class="fas fa-info-circle"><span class="info">Min 500 Max 150000 sqft</span></i></label> <br>
                     <input value="{{sqft_lot}}" class="inputs" type="text" id="sqft_lot" name="sqft_lot"><br> <br>
-                    <label for="floors">Floors <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="floors">Floors <i class="fas fa-info-circle"><span class="info">Min 1 and Max 3</span></i></label> <br>
                     <input value="{{floors}}" class="inputs" type="text" id="floors" name="floors"><br> <br>
-                    <label for="waterfront">Waterfront <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="waterfront">Waterfront <i class="fas fa-info-circle"><span class="info"> Min 0 Max 1</span></i></label> <br>
                     <input value="{{waterfront}}" class="inputs" type="text" id="waterfront" name="waterfront"><br> <br>
 
                 </div>
                 <div class="col">
-                    <label for="view">View <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
-                    <input value="{{view}}" class="inputs" type="text" id="view" name="view"><br> <br>
-                    <label for="condition">Condition <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
-                    <input value="{{condition}}" class="inputs" type="text" id="condition" name="condition"><br> <br>
-                    <label for="grade">Grade <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
-                    <input value="{{grade}}" class="inputs" type="text" id="grade" name="grade"><br> <br>
-                    <label for="sqft_above">Above Area <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+                    <label for="sqft_above">Above Area <i class="fas fa-info-circle"><span class="info">Min 300 Max 9000 sqft</span></i></label> <br>
                     <input value="{{sqft_above}}" class="inputs" type="text" id="sqft_above" name="sqft_above"><br> <br>
-                    <label for="sqft_basement">Basement <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="sqft_basement">Basement <i class="fas fa-info-circle"><span class="info">Min 0 and Max 5000 sqft</span></i></label> <br>
                     <input value="{{sqft_basement}}" class="inputs" type="text" id="sqft_basement" name="sqft_basement"><br> <br>
-                    <label for="yr_built">Year of Built <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="yr_built">Year of Built <i class="fas fa-info-circle"><span class="info">Min 1900 and Max 2020</span></i></label> <br>
                     <input value="{{yr_built}}" class="inputs" type="text" id="yr_built" name="yr_built"><br> <br>
 
+                    <label for="yr_renovated">Year of Renovated <i class="fas fa-info-circle"><span class="info">Min 0 and Max 2020</span></i></label> <br>
+                    <input value="{{yr_renovated}}" class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
+
+
+                    <label for="lat">Latitude <i class="fas fa-info-circle"><span class="info">Around 47 and 48</span></i></label> <br>
+                    <input value="{{lat}}" class="inputs" type="text" id="lat" name="lat"><br> <br>
+
+                    <label for="long">Longitude <i class="fas fa-info-circle"><span class="info">Around -122 and -121</span></i></label> <br>
+                    <input value="{{long}}" class="inputs" type="text" id="long" name="long"><br> <br>
 
                 </div>
                 <div class="col">
-                    <label for="yr_renovated">Year of Renovated <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
-                    <input value="{{yr_renovated}}" class="inputs" type="text" id="yr_renovated" name="yr_renovated"><br> <br>
-                    <label for="zipcode">Zipcode <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="zipcode">Zipcode <i class="fas fa-info-circle"><span class="info">Zipcode of Location</span></i></label> <br>
                     <input value="{{zipcode}}" class="inputs" type="text" id="zipcode" name="zipcode"><br> <br>
-                    <label for="lat">Latitude <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
-                    <input value="{{lat}}" class="inputs" type="text" id="lat" name="lat"><br> <br>
-                    <label for="long">Longitude <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
-                    <input value="{{long}}" class="inputs" type="text" id="long" name="long"><br> <br>
-                    <label for="sqft_living15">Living15 Area <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="sqft_living15">Living15 Area <i class="fas fa-info-circle"><span class="info">Min 300 Max 13000 sqft</span></i></label> <br>
                     <input value="{{sqft_living15}}" class="inputs" type="text" id="sqft_living15" name="sqft_living15"><br> <br>
-                    <label for="sqft_lot15">Lot15 Area <i class="fas fa-info-circle"><span class="info">this is
-                                bedroom</span></i></label> <br>
+
+                    <label for="sqft_lot15">Lot15 Area <i class="fas fa-info-circle"><span class="info">Min 500 Max 150000 sqft</span></i></label> <br>
                     <input value="{{sqft_lot15}}" class="inputs" type="text" id="sqft_lot15" name="sqft_lot15"><br> <br>
 
+                    <label for="view">View <i class="fas fa-info-circle"><span class="info">Min 0 Max 10</span></i></label> <br>
+                    <input value="{{view}}" class="inputs" type="text" id="view" name="view"><br> <br>
 
+                    <label for="condition">Condition <i class="fas fa-info-circle"><span class="info">Min 3 Max 5</span></i></label> <br>
+                    <input value="{{condition}}" class="inputs" type="text" id="condition" name="condition"><br> <br>
 
+                    <label for="grade">Grade <i class="fas fa-info-circle"><span class="info">Min 1 Max 13</span></i></label> <br>
+                    <input value="{{grade}}" class="inputs" type="text" id="grade" name="grade"><br> <br>
                 </div>
             </div>
         </div>
         <div class="res">
-            <h2>Predicted Price : {{res}}</h2>
+            <h2>Predicted Price : {{res}} $</h2>
         </div>
 
     </form>

@@ -73,9 +73,14 @@ label {
     border: 1px solid white;
 }
 
+i {
+    font-size: 10px;
+}
+
 i .info {
     visibility: hidden;
-    width: 120px;
+    width: fit-content;
+    font-size: 10px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -83,6 +88,8 @@ i .info {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 i:hover .info {
